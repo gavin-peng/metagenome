@@ -3,21 +3,8 @@
 from pydantic import BaseModel, Field
 from typing import Optional, Any
 from datetime import datetime
-from enum import Enum
 
-
-class FileState(str, Enum):
-    """File lifecycle states."""
-    UPLOADED = "UPLOADED"
-    PREPARED = "PREPARED"
-    VALIDATED = "VALIDATED"
-
-
-class FileType(str, Enum):
-    """Supported file types."""
-    VCF = "VCF"
-    BAM = "BAM"
-    CRAM = "CRAM"
+from app.models.file_asset import FileState, FileType
 
 
 class FileUploadRequest(BaseModel):
